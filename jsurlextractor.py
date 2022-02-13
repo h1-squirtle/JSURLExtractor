@@ -13,7 +13,8 @@ parser.add_argument("-s","--status",help="To check the status of js urls",action
 args=parser.parse_args()
 
 # Visiting main urls and storing HTML in var.
-mainURL = sys.argv[1]
+mainURL = args.url
+mainURL = mainURL.strip("/")
 r = requests.get(mainURL)
 data = r.text
 
@@ -76,3 +77,5 @@ elif args.output:
     output_save()
 elif args.status:
     check_status()
+else:
+    print("Error.")
