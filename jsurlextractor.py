@@ -63,7 +63,7 @@ def output_save():
 
 def check_status():
     fullURLMaker()
-    print("JS URLs Extracted")
+    print("JS URLs Extracted:\n--------------------------")
     for jsLink in full_js_Urls:
         r=requests.get(jsLink)
         print(f"{jsLink} >>> {r.status_code}")
